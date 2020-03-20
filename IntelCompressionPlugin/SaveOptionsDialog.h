@@ -128,6 +128,7 @@ public:
 	
 	bool LoadPresetNonUIMode(string name);
 	void FillGlobalStruct();
+	void YeOldeDefaultGlobalStruct();
 	void GetGlobalStruct();
 	const DialogData & GetData() const { return mDialogData; }
 

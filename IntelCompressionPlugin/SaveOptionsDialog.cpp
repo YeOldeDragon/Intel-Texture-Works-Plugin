@@ -205,6 +205,19 @@ void OptionsDialog::FillGlobalStruct()
 		CToPStr(mDialogData.PresetName.c_str(), reinterpret_cast<char *>(globalParams->presetBatchName));
 }
 
+void OptionsDialog::YeOldeDefaultGlobalStruct()
+{
+	globalParams->encoding_g = DXGI_FORMAT_BC7_UNORM;
+	globalParams->fast_bc67 = false;
+	globalParams->TextureTypeIndex = TextureTypeEnum::COLOR_ALPHA; //Col,Col+alpha,CubeFrmLayera,CubefromCross,NM
+	globalParams->MipMapTypeIndex = MipmapEnum::AUTOGEN;  //None,Autogen,FromLayers
+	//globalParams->MipLevel = 0;			   // only valid if SetMipLevel == true
+	globalParams->SetMipLevel = false;;
+	globalParams->Normalize = false;
+	globalParams->FlipX = false;
+	globalParams->FlipY = false;
+}
+
 //Fill UI data struct with global plugin struct
 void OptionsDialog::GetGlobalStruct()
 {
@@ -1344,29 +1357,9 @@ uint32 OptionsDialog::GetSelectedMipLevelIndex()
 int32 OptionsDialog::DoModal(IntelPlugin* plugin)
 {
 	OptionsDialog dialog(plugin);
-	int32 id = IDOK;
-	
-	if (plugin->GetData()->queryForParameters)
-	{
-		//Interactive mode, show UI
-		id = dialog.Modal(NULL, NULL, IDD_MAINDIALOG);
-	}
-	else
-	{
-		//presetBatchName is a PString (first byte is the size)
-		string presetStringname = reinterpret_cast<char *>(plugin->GetData()->presetBatchName)+1;
 
-		//Load preset without UI
-		id = dialog.LoadPresetNonUIMode(presetStringname)?1:2;
-	}
-
-	if (id == IDOK)		
-	{
-		//Fill gloabl struct with UI info
-		dialog.FillGlobalStruct();
-	}
-
-	return id;
+	dialog.YeOldeDefaultGlobalStruct();
+	return IDOK;
 }
 
 

@@ -17,7 +17,7 @@
 #pragma once
 
 #include "IntelPlugin.h"
-
+#include <string>
 #include <vector>
 #include <list>
 

@@ -2489,19 +2489,11 @@ void IntelPlugin::DoReadStart()
 	//Do we need the user to make a selection regarding alpha or mip maps?
 	if (compressedImageHasAlpha || compressedImageHasMipMaps)
 	{
-		//ask user if he wants them, and not in batch
-		if (ps.data->queryForParameters)
-		{
-			unsigned8 loadDialogResult = ShowLoadDialog (compressedImageHasAlpha, compressedImageHasMipMaps, GetActiveWindow());
-			
-			//decode result 
-			separateAlphaChannel = (loadDialogResult & LoadInfoEnum::USE_SEPARATEALPHA) ? true : false;
-			loadDDSMipMaps = (loadDialogResult & LoadInfoEnum::USE_MIPMAPS) ? true : false; 
+		separateAlphaChannel = true;
+		loadDDSMipMaps = false;
+		ps.data->alphaBatchSeperate = separateAlphaChannel;
+		ps.data->mipmapBatchAllowed = loadDDSMipMaps;
 
-			//store descriptor values for scripting. Actual write happens in DoReadFinish()
-			ps.data->alphaBatchSeperate = separateAlphaChannel;
-			ps.data->mipmapBatchAllowed = loadDDSMipMaps;
-		}
 	}
 
 	//init to no layers

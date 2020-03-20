@@ -15,6 +15,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include <string>
 
 void    ShowAboutIntel (AboutRecordPtr aboutPtr);        // Pop about box.
 std::string GetPresetName(std::string str, HWND parent); //Get preset name dialog

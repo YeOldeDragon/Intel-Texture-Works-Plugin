@@ -31,3 +31,7 @@ Plugins/
 *.aps
 *.zip
 *.tmp
+/.vs/IntelTextureWorks/v16
+/3rdParty/photoshop/pluginsdk/samplecode
+/3rdParty/photoshop/images
+/3rdParty/photoshop/connectionsdk
