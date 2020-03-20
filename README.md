@@ -1,5 +1,11 @@
 # Intel&reg; Texture Works Plugin for Photoshop*
 
+## YeOldeDragon fork content:
+This fork of Intel Texture Works has been created to simplify my life when editing textures for Skyrim SE/VR.  
+It simply autoload .dds files with `separateAlphaChannel ON` and `loadDDSMipMaps OFF`.  
+When saving, it autosave with optimized config for Skyrim SE/VR (BC7, color+alpha, mipmap autogen).
+
+
 # Pre-Compiled Binary
 ## Getting Started (Installation)
 1. Close Photoshop
