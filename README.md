@@ -3,7 +3,9 @@
 ## YeOldeDragon fork content:
 This fork of Intel Texture Works has been created to simplify my life when editing textures for Skyrim SE/VR.  
 It simply autoload .dds files with `separateAlphaChannel ON` and `loadDDSMipMaps OFF`.  
-When saving, it autosave with optimized config for Skyrim SE/VR (BC7, color+alpha, mipmap autogen).
+When saving, it autosave with optimized config for Skyrim SE/VR (BC7, color+alpha, mipmap autogen).  
+  
+...So no more dialog popup when loading or closing a .dds file.
 
 
 # Pre-Compiled Binary
