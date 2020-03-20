@@ -18,11 +18,6 @@ When saving, it autosave with optimized config for Skyrim SE/VR (BC7, color+alph
 4. Paste the plugin into the appropriate Photoshop Plugin folder
 	* D:\Program Files\Adobe Photoshop CC 2014\Required\Plug-Ins\File Formats
 	* D:\Program Files\Adobe\Adobe Photoshop CS6 (64 Bit)\Plug-ins\File Formats
-5. Copy the cubemap scripts from:
-	* .../IntelTextureWorks_1.0.4\PhotoshopScripts\IntelTextureWorks-ConvertCubeMap.jsx
-	* .../IntelTextureWorks_1.0.4\PhotoshopScripts\IntelTextureWorks-CubeMapGaussianBlur.jsx
-6. Paste the cubemap scripts into:
-	* D:\Program Files\Adobe Photoshop CC 2014\Presets\Scripts
 
 ## Saving Files via Plugin
 1. File > Save As
@@ -30,8 +25,7 @@ When saving, it autosave with optimized config for Skyrim SE/VR (BC7, color+alph
 2. Navigate to store location
 3. Assign file name
 4. Save
-5. Select desired plugin options and preview (pan/zoom), as necessary
-6. Ok
+5. File will be saved with YeOlde default option values (BC7, color+alpha, mipmap autogen).
 
 ## Loading Files Saved via Plugin
 Multiple resident DDS plugins can result in a texture display error on load. To avoid this, use the following process to reload textures saved with the Intel&reg; Texture Works plugin for Photoshop
@@ -39,8 +33,7 @@ Multiple resident DDS plugins can result in a texture display error on load. To 
 1. File > Open As
 2. Select **Intel&reg; Texture Works (\*.DDS;\*.DDS)** as type (to the right of "File name" field)
 3. Select file
-4. Select desired mipmap loading options if applicable
-5. Select desired color profile loading options
+4. File will be loaded with YeOlde default option values (`separateAlphaChannel ON` and `loadDDSMipMaps OFF`).
 
 ## Logging Bugs, Enhancements, & Feedback
 Use the [GitHub Issue Tracking System](https://github.com/GameTechDev/Intel-Texture-Works-Plugin/issues) to log your bugs, enhancement (requests), and feedback (general impressions appreciated). **Labels really help here - please use them**.
